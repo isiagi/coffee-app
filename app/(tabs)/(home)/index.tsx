@@ -50,20 +50,23 @@ const index = () => {
   return (
     <View className=" flex-1 ">
       <StatusBar barStyle={"light-content"} />
-      <ImageBackground
-        source={{
-          uri: "https://img.freepik.com/free-photo/fresh-coffee-steams-wooden-table-close-up-generative-ai_188544-8923.jpg",
-        }}
-        className="w-300 h-[250px] justify-center"
-        resizeMode="cover"
-        // style={{
-        //   height: 300,
-        // }}
-      >
-        <View>
-          <Text className="text-white px-5 text-xl">Hello John</Text>
-        </View>
-      </ImageBackground>
+      <View className="w-300 h-[250px] ">
+        <ImageBackground
+          source={{
+            uri: "https://img.freepik.com/free-photo/fresh-coffee-steams-wooden-table-close-up-generative-ai_188544-8923.jpg",
+          }}
+          className=" w-full h-full justify-center rounded-bl-3xl rounded-br-3xl overflow-hidden"
+          resizeMode="cover"
+          // style={{
+          //   height: 300,
+          // }}
+        >
+          <View>
+            <Text className="text-white px-5 text-xl">Hello John</Text>
+          </View>
+        </ImageBackground>
+      </View>
+
       <View className="flex-1">
         <Text className="text-xl px-5 py-3 font-bold">Find Your Coffee</Text>
         <ScrollView horizontal>
@@ -77,7 +80,10 @@ const index = () => {
             { id: 6, name: "Cafe au Lait" },
             { id: 7, name: "Cafe Mocha" },
           ].map(({ id, name }) => (
-            <View className="bg-black text-white items-center justify-center py-1 px-3 mx-2 rounded-3xl">
+            <View
+              key={id}
+              className="bg-black text-white items-center justify-center py-1 px-3 mx-2 rounded-3xl"
+            >
               <Text className="text-lg text-white text-center">{name}</Text>
             </View>
           ))}

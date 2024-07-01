@@ -1,5 +1,7 @@
 import React from "react";
 import { Stack } from "expo-router";
+import { Text } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const HomeLayout = () => {
   return (
@@ -19,7 +21,21 @@ const HomeLayout = () => {
           headerTitle: "Jeff Coffee",
         }}
       />
-      <Stack.Screen name="detail" />
+      <Stack.Screen
+        name="detail"
+        options={{
+          headerTitle: "",
+          headerRight: () => (
+            <Ionicons name="heart-outline" size={24} color={"#fff"} />
+          ),
+          headerTransparent: true,
+          headerBackButtonMenuEnabled: true,
+          headerTitleStyle: {
+            color: "#fff",
+          },
+          headerTintColor: "#fff",
+        }}
+      />
     </Stack>
   );
 };
